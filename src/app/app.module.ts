@@ -7,13 +7,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { ListComponent } from './components/list/list.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { EditCharacterComponent } from './components/edit-character/edit-character.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     ListComponent,
-    BannerComponent
+    BannerComponent,
+    EditCharacterComponent
   ],
   imports: [
     BrowserModule,
