@@ -9,6 +9,7 @@ import { MarvelService } from '../../services/marvel.service';
 export class ListComponent implements OnInit {
 
   characters: any[] = [];  // Array para almacenar los personajes
+  selectedCharacter: any = null;  // Para almacenar el personaje seleccionado en la edición
 
   constructor(private marvelService: MarvelService) {}
 
@@ -29,7 +30,7 @@ export class ListComponent implements OnInit {
     );
   }
 
-  // Método para agregar un personaje a la lista
+  // Método para agregar un personaje
   addCharacter(character: any): void {
     this.marvelService.addLocalCharacter(character);
     this.loadCharacters();  // Recarga la lista de personajes
@@ -41,9 +42,20 @@ export class ListComponent implements OnInit {
     this.loadCharacters();  // Recarga la lista de personajes
   }
 
-  // Método para actualizar un personaje (puedes implementar un formulario para editar)
+  // Método para seleccionar un personaje y abrir el formulario de edición
+  editCharacter(character: any): void {
+    this.selectedCharacter = { ...character };  // Copia el personaje para editarlo
+  }
+
+  // Método para actualizar el personaje editado
   updateCharacter(updatedCharacter: any): void {
     this.marvelService.updateLocalCharacter(updatedCharacter);
     this.loadCharacters();  // Recarga la lista de personajes
+    this.selectedCharacter = null;  // Cierra el formulario de edición
+  }
+
+  // Método para cancelar la edición
+  cancelEdit(): void {
+    this.selectedCharacter = null;
   }
 }

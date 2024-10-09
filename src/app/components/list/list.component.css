@@ -1,0 +1,86 @@
+/* Estilos para las cards */
+.character-card {
+    transition: transform 0.3s ease-in-out;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  
+  /* Animación de hover */
+  .character-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Ajustes de imagen */
+  .card-img-top {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+  }
+  
+  /* Estilo para el cuerpo de la card */
+  .card-body {
+    text-align: center;
+  }
+  
+  /* Título y descripción */
+  .card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+  }
+  
+  .card-text {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    color: #555;
+  }
+  
+  /* Contenedor de botones */
+  .card-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px;
+  }
+  
+  /* Estilo de los botones */
+  .btn {
+    width: 45%;
+    padding: 10px;
+    font-size: 1rem;
+    border-radius: 5px;
+  }
+  
+  /* Botón de agregar personaje */
+  .add-character-btn {
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .character-card {
+      margin-bottom: 10px;
+    }
+  
+    .add-character-btn {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .character-card {
+      margin-bottom: 10px;
+    }
+  
+    .btn {
+      width: 100%;
+    }
+  }
+  
