@@ -14,12 +14,14 @@ export class MarvelService {
 
   constructor(private http: HttpClient) {}
 
+  //Generamos los parámetros de autenticación usando la clave pública y privada
   private generateAuthParams() {
     const ts = new Date().getTime();
     const hash = CryptoJS.MD5(ts + this.privateKey + this.publicKey).toString();
     return `ts=${ts}&apikey=${this.publicKey}&hash=${hash}`;
   }
 
+  //Métodos para obtener personajes de la API de Marvel
   getCharacters(): Observable<any> {
     const authParams = this.generateAuthParams();
     return this.http.get(`${this.baseUrl}/characters?${authParams}`);
@@ -42,6 +44,7 @@ export class MarvelService {
     return characters ? JSON.parse(characters) : [];
   }
 
+  
   updateLocalCharacter(updatedCharacter: any) {
     let characters = this.getLocalCharacters();
     const index = characters.findIndex(c => c.id === updatedCharacter.id);
