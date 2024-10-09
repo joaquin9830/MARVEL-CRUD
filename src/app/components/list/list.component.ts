@@ -44,14 +44,14 @@ export class ListComponent implements OnInit {
 
   // Método para seleccionar un personaje y abrir el formulario de edición
   editCharacter(character: any): void {
-    this.selectedCharacter = { ...character };  // Copia el personaje para editarlo
+    this.selectedCharacter = { ...character };  
   }
 
   // Método para actualizar el personaje editado
   updateCharacter(updatedCharacter: any): void {
     this.marvelService.updateLocalCharacter(updatedCharacter);
     this.loadCharacters();  // Recarga la lista de personajes
-    this.selectedCharacter = null;  // Cierra el formulario de edición
+    this.selectedCharacter = null;  // Cierra el formulario de edición    
   }
 
   // Método para cancelar la edición
