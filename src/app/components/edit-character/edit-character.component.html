@@ -1,1 +1,14 @@
-<p>edit-character works!</p>
+<div *ngIf="character">
+    <h3>Editar Personaje</h3>
+    <form (ngSubmit)="onSubmit()">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" [(ngModel)]="character.name" name="name" required>
+      
+      <label for="description">Descripción:</label>
+      <input type="text" id="description" [(ngModel)]="character.description" name="description">
+      
+      <button type="submit">Guardar Cambios</button>
+      <button type="button" (click)="cancelEdit()">Cancelar</button>
+    </form>
+  </div>
+  

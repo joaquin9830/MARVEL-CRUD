@@ -8,6 +8,8 @@ import { ListComponent } from './components/list/list.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditCharacterComponent } from './components/edit-character/edit-character.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,16 @@ import { EditCharacterComponent } from './components/edit-character/edit-charact
     HeaderComponent,
     ListComponent,
     BannerComponent,
-    EditCharacterComponent
+    EditCharacterComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule    
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule
+        
   ],
   providers: [
     provideClientHydration()
