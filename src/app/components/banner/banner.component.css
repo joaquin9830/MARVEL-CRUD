@@ -1,0 +1,87 @@
+.banner-container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+    overflow: hidden;
+  }
+  
+  /* Estilos para el video de fondo */
+  .background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  /* Botón para mostrar la card */
+  .toggle-card-button {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .toggle-card-button:hover {
+    background-color: var(--color-accent);
+  }
+  
+  /* Card con información que aparece al hacer clic */
+  .info-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black; 
+    color: white; 
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 2;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  /* Estilos para el título y texto dentro de la card */
+  .info-card h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+  }
+  
+  .info-card p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón "Comenzar ahora" dentro de la card */
+  .start-button {
+    background-color: var(--color-secondary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .start-button:hover {
+    background-color: var(--color-accent);
+  }
+  

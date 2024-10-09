@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrl: './banner.component.css'
 })
 export class BannerComponent {
+   // Controla si la card se muestra o no
+   showCard = false;
 
+   // Método para alternar la visibilidad de la card
+   toggleCard() {
+     this.showCard = !this.showCard;
+   }
 }
