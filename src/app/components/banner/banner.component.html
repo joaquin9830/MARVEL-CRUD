@@ -5,14 +5,19 @@
         Tu navegador no soporta videos HTML5.
     </video>
 
-    <!-- Botón para mostrar la card -->
-    <button class="toggle-card-button" (click)="toggleCard()">Más información</button>
 
-    <!-- Card que se mostrará/ocultará al hacer clic en el botón -->
-    <div class="info-card" *ngIf="showCard">
+    <h1 class="banner-title">LA AVENTURA COMIENZA AHORA</h1>
+
+    <div class="overlay" *ngIf="showCard"></div>
+
+    <!-- Card con la información de la página -->
+    <div class="info-card animated-card" *ngIf="showCard">
         <h1>Bienvenidos</h1>
         <p>Aquí podrás explorar el mundo de los personajes de Marvel. Podrás crear, actualizar, eliminar y ver tus
             personajes favoritos.</p>
         <button class="start-button">Comenzar ahora</button>
     </div>
+
+    <!-- Botón para mostrar la card -->
+    <button class="toggle-card-button" (click)="toggleCard()">Más información</button>
 </div>
