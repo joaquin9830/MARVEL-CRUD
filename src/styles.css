@@ -1,1 +1,24 @@
-/* You can add global styles to this file, and also import other style files */
+/*Estilos globales*/
+
+/* Variables de colores */
+:root {
+    --color-primary-dark: #060047;
+    --color-primary: #B3005E;
+    --color-secondary: #E90064;
+    --color-accent: #FF5F9E;
+  }
+  
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Marvel", sans-serif;
+    font-weight: 400;
+}
+
+body{
+    font-family: "Marvel", sans-serif;
+    font-weight: 700;
+}
+
