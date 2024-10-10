@@ -39,6 +39,7 @@ export class MarvelService {
     localStorage.setItem('localCharacters', JSON.stringify(characters));
   }
 
+  //Método para obtener los personajes del localStorage
   getLocalCharacters(): any[] {
     const characters = localStorage.getItem('localCharacters');
     return characters ? JSON.parse(characters) : [];

@@ -6,20 +6,20 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './character-card.component.css'
 })
 export class CharacterCardComponent {
-  // El personaje será recibido desde el componente padre (ListComponent)
   @Input() character: any;
-
-  // Eventos para editar y eliminar el personaje
   @Output() edit = new EventEmitter<any>();
-  @Output() delete = new EventEmitter<number>();
+  @Output() delete = new EventEmitter<any>();
+  @Output() showInfo = new EventEmitter<any>(); // Emitir evento para mostrar detalles
 
-  // Método que emite el evento para editar
-  onEdit() {
+  onEdit(): void {
     this.edit.emit(this.character);
   }
 
-  // Método que emite el evento para eliminar
-  onDelete() {
-    this.delete.emit(this.character.id);
+  onDelete(): void {
+    this.delete.emit(this.character);
+  }
+
+  onShowInfo(): void {
+    this.showInfo.emit(this.character); // Emitir personaje para mostrar detalles
   }
 }

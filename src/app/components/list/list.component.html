@@ -1,20 +1,28 @@
 <div class="container">
-    <h1>Personajes de MARVEL</h1>
-    <div class="row">
-      <div class="col-md-4 col-sm-6 col-12" *ngFor="let character of characters">
-        <div class="card character-card">
-          <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" class="card-img-top" alt="{{character.name}}">
-          <div class="card-body">
-            <h5 class="card-title">{{ character.name }}</h5>
-            <p class="card-text">{{ character.description || 'No disponible' }}</p>
-            <div class="card-buttons">
-              <button class="btn btn-primary" (click)="updateCharacter(character)">Editar</button>
-              <button class="btn btn-danger" (click)="deleteCharacter(character.id)">Eliminar</button>
-            </div>
-          </div>
-        </div>
-      </div>
+  <h1>Personajes de MARVEL</h1>
+
+  <!-- Formulario para agregar o editar personajes -->
+  <app-character-form 
+    *ngIf="selectedCharacter" 
+    [character]="selectedCharacter" 
+    (save)="saveCharacter($event)" 
+    (cancel)="cancelEdit()">
+  </app-character-form>
+
+  <div class="row">
+    <!-- Lista de personajes mostrados en tarjetas -->
+    <div class="col-md-4 col-sm-6 col-12" *ngFor="let character of characters">
+      <app-character-card 
+        [character]="character" 
+        (edit)="editCharacter($event)" 
+        (delete)="deleteCharacter($event)">
+      </app-character-card>
     </div>
-    <button class="btn btn-success add-character-btn" (click)="addCharacter({name: 'Nuevo personaje', description: 'Descripción nueva', id: characters.length + 1})">Agregar personaje</button>
   </div>
-  
+
+  <!-- Botón para agregar un nuevo personaje -->
+  <button class="btn btn-success add-character-btn" 
+    (click)="selectedCharacter = { name: '', description: '', id: null }">
+    Agregar personaje
+  </button>
+</div>

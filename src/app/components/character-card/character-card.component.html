@@ -1,11 +1,11 @@
 <div class="card character-card">
-    <img [src]="character.thumbnail.path + '.' + character.thumbnail.extension" class="card-img-top" alt="{{character.name}}">
-    <div class="card-body">
-      <h5 class="card-title">{{ character.name }}</h5>
-      <p class="card-text">{{ character.description || 'No disponible' }}</p>
-      <div class="card-buttons">
-        <button class="btn btn-primary" (click)="onEdit()">Editar</button>
-        <button class="btn btn-danger" (click)="onDelete()">Eliminar</button>
-      </div>
+  <img [src]="character.thumbnail?.path + '.' + character.thumbnail?.extension" class="card-img-top" alt="{{character.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{ character.name }}</h5>
+    <div class="card-buttons">
+      <button class="btn btn-info" (click)="onShowInfo()">Info</button> <!-- Nuevo botón -->
+      <button class="btn btn-primary" (click)="onEdit()">Editar</button>
+      <button class="btn btn-danger" (click)="onDelete()">Eliminar</button>
     </div>
   </div>
+</div>

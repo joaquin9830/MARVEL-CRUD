@@ -1,0 +1,25 @@
+/* Estilos de las tarjetas de personajes */
+.character-card {
+    background-color: var(--color-primary);
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-buttons button {
+    background-color: var(--color-button);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.card-buttons button:hover {
+    background-color: var(--color-accent);
+}

@@ -8,8 +8,8 @@ import { MarvelService } from '../../services/marvel.service';
 })
 export class ListComponent implements OnInit {
 
-  characters: any[] = [];  // Array para almacenar los personajes
-  selectedCharacter: any = null;  // Para almacenar el personaje seleccionado en la edición
+  characters: any[] = [];  // Lista de personajes
+  selectedCharacter: any = null;  // Personaje seleccionado para edición o creación
 
   constructor(private marvelService: MarvelService) {}
 
@@ -17,45 +17,44 @@ export class ListComponent implements OnInit {
     this.loadCharacters();
   }
 
-  // Carga los personajes desde la API de Marvel o desde el localStorage
+  // Cargar personajes de la API de Marvel
   loadCharacters(): void {
     this.marvelService.getCharacters().subscribe(
       (data: any) => {
         this.characters = data.data.results;
       },
       (error: any) => {
-        console.error('Error al obtener personajes', error);
-        this.characters = this.marvelService.getLocalCharacters();  // Si falla la API, carga desde el localStorage
+        console.error('Error fetching characters', error);
       }
     );
   }
 
-  // Método para agregar un personaje
-  addCharacter(character: any): void {
-    this.marvelService.addLocalCharacter(character);
-    this.loadCharacters();  // Recarga la lista de personajes
+  // Guardar personaje
+  saveCharacter(character: any): void {
+    if (character.id) {
+      // Actualizar personaje
+      const index = this.characters.findIndex(c => c.id === character.id);
+      if (index !== -1) this.characters[index] = character;
+    } else {
+      // Agregar nuevo personaje
+      character.id = this.characters.length + 1; // Simulación de ID
+      this.characters.push(character);
+    }
+    this.selectedCharacter = null;
   }
 
-  // Método para eliminar un personaje
-  deleteCharacter(id: number): void {
-    this.marvelService.deleteLocalCharacter(id);
-    this.loadCharacters();  // Recarga la lista de personajes
-  }
-
-  // Método para seleccionar un personaje y abrir el formulario de edición
-  editCharacter(character: any): void {
-    this.selectedCharacter = { ...character };  
-  }
-
-  // Método para actualizar el personaje editado
-  updateCharacter(updatedCharacter: any): void {
-    this.marvelService.updateLocalCharacter(updatedCharacter);
-    this.loadCharacters();  // Recarga la lista de personajes
-    this.selectedCharacter = null;  // Cierra el formulario de edición    
-  }
-
-  // Método para cancelar la edición
+  // Cancelar edición
   cancelEdit(): void {
     this.selectedCharacter = null;
+  }
+
+  // Editar personaje
+  editCharacter(character: any): void {
+    this.selectedCharacter = { ...character };  // Clonar objeto para editar
+  }
+
+  // Eliminar personaje
+  deleteCharacter(character: any): void {
+    this.characters = this.characters.filter(c => c.id !== character.id);
   }
 }

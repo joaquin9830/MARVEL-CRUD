@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
+import { CardDetailComponent } from './components/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CharacterFormComponent } from './components/character-form/character-fo
     EditCharacterComponent,
     HomeComponent,
     CharacterCardComponent,
-    CharacterFormComponent
+    CharacterFormComponent,
+    CardDetailComponent
   ],
   imports: [
     BrowserModule,
