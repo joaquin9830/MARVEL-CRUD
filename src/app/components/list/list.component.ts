@@ -8,8 +8,9 @@ import { MarvelService } from '../../services/marvel.service';
 })
 export class ListComponent implements OnInit {
 
-  characters: any[] = [];  // Lista de personajes
-  selectedCharacter: any = null;  // Personaje seleccionado para edición o creación
+  characters: any[] = [];
+  selectedCharacter: any = null;
+  detailedCharacter: any = null;  // Personaje seleccionado para detalles
 
   constructor(private marvelService: MarvelService) {}
 
@@ -17,7 +18,6 @@ export class ListComponent implements OnInit {
     this.loadCharacters();
   }
 
-  // Cargar personajes de la API de Marvel
   loadCharacters(): void {
     this.marvelService.getCharacters().subscribe(
       (data: any) => {
@@ -29,32 +29,36 @@ export class ListComponent implements OnInit {
     );
   }
 
-  // Guardar personaje
   saveCharacter(character: any): void {
     if (character.id) {
-      // Actualizar personaje
       const index = this.characters.findIndex(c => c.id === character.id);
       if (index !== -1) this.characters[index] = character;
     } else {
-      // Agregar nuevo personaje
-      character.id = this.characters.length + 1; // Simulación de ID
+      character.id = this.characters.length + 1;
       this.characters.push(character);
     }
     this.selectedCharacter = null;
   }
 
-  // Cancelar edición
   cancelEdit(): void {
     this.selectedCharacter = null;
   }
 
-  // Editar personaje
   editCharacter(character: any): void {
-    this.selectedCharacter = { ...character };  // Clonar objeto para editar
+    this.selectedCharacter = { ...character };
   }
 
-  // Eliminar personaje
   deleteCharacter(character: any): void {
     this.characters = this.characters.filter(c => c.id !== character.id);
+  }
+
+  // Mostrar detalles del personaje seleccionado
+  showCharacterDetail(character: any): void {
+    this.detailedCharacter = character;
+  }
+
+  // Cerrar detalles del personaje
+  closeCharacterDetail(): void {
+    this.detailedCharacter = null;
   }
 }

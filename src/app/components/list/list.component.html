@@ -15,10 +15,18 @@
       <app-character-card 
         [character]="character" 
         (edit)="editCharacter($event)" 
-        (delete)="deleteCharacter($event)">
+        (delete)="deleteCharacter($event)"
+        (showInfo)="showCharacterDetail($event)">
       </app-character-card>
     </div>
   </div>
+
+  <!-- Mostrar detalles del personaje seleccionado -->
+  <app-card-detail 
+    *ngIf="detailedCharacter" 
+    [character]="detailedCharacter" 
+    (close)="closeCharacterDetail()">
+  </app-card-detail>
 
   <!-- Botón para agregar un nuevo personaje -->
   <button class="btn btn-success add-character-btn" 
