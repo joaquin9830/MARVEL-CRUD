@@ -11,6 +11,7 @@ import { EditCharacterComponent } from './components/edit-character/edit-charact
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
+import { CharacterFormComponent } from './components/character-form/character-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { CharacterCardComponent } from './components/character-card/character-ca
     BannerComponent,
     EditCharacterComponent,
     HomeComponent,
-    CharacterCardComponent
+    CharacterCardComponent,
+    CharacterFormComponent
   ],
   imports: [
     BrowserModule,
