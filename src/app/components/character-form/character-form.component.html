@@ -1,1 +1,14 @@
-<p>character-form works!</p>
+<div *ngIf="character">
+    <h3>{{ character.id ? 'Editar Personaje' : 'Agregar Personaje' }}</h3>
+    <form (ngSubmit)="onSave()">
+      <label for="name">Nombre:</label>
+      <input type="text" id="name" [(ngModel)]="character.name" name="name" required>
+  
+      <label for="description">Descripción:</label>
+      <input type="text" id="description" [(ngModel)]="character.description" name="description">
+  
+      <button type="submit" class="btn btn-success">Guardar</button>
+      <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+    </form>
+  </div>
+  
