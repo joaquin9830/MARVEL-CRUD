@@ -1,0 +1,14 @@
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-accent);
+    color: white;
+    border-radius: 5px;
+    z-index: 1100;
+}
+
+.alert-success {
+    background-color: var(--color-button);
+}

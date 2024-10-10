@@ -8,6 +8,14 @@
     background-color: #fff;
     overflow: hidden;
   }
+
+  h1{
+    text-align: center;
+    margin-top: 20px;
+    color: var(--color-secondary);
+    font-weight: bold;
+    font-size: 4em;
+  }
   
   /* Animación de hover */
   .character-card:hover {

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Personajes de MARVEL</h1>
+  <h1>PERSONAJES DE MARVEL</h1>
 
   <!-- Formulario para agregar o editar personajes -->
   <app-character-form 
@@ -36,4 +36,7 @@
     (click)="selectedCharacter = { name: '', description: '', id: null }">
     Agregar personaje
   </button>
+
+   <!-- Componente de alertas -->
+   <app-alert [message]="alertMessage"></app-alert>
 </div>

@@ -19,7 +19,7 @@ export class CharacterFormComponent {
     reader.onload = () => {
       this.selectedImage = reader.result;
       this.character.thumbnail = {
-        path: this.selectedImage, 
+        path: this.selectedImage,
         extension: '' 
       };
     };
