@@ -13,6 +13,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CharacterCardComponent } from './components/character-card/character-card.component';
 import { CharacterFormComponent } from './components/character-form/character-form.component';
 import { CardDetailComponent } from './components/card-detail/card-detail.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { CardDetailComponent } from './components/card-detail/card-detail.compon
     HomeComponent,
     CharacterCardComponent,
     CharacterFormComponent,
-    CardDetailComponent
+    CardDetailComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,9 @@
     </div>
   </div>
 
+  <!-- Fondo oscuro solo cuando se muestra la tarjeta de detalles -->
+  <div *ngIf="detailedCharacter" class="modal-overlay"></div>
+
   <!-- Mostrar detalles del personaje seleccionado -->
   <app-card-detail 
     *ngIf="detailedCharacter" 
