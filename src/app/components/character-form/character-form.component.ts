@@ -6,20 +6,34 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   styleUrl: './character-form.component.css'
 })
 export class CharacterFormComponent {
-  // El personaje que se editará será recibido desde el componente padre
-  @Input() character: any;
-
-  // Emitimos un evento cuando se guarda o cancela la edición
+  @Input() character: any = {};
   @Output() save = new EventEmitter<any>();
   @Output() cancel = new EventEmitter<void>();
 
-  // Método para guardar el personaje editado
-  onSave() {
+  selectedImage: string | ArrayBuffer | null = null;
+
+  onFileSelected(event: any): void {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+    
+    reader.onload = () => {
+      this.selectedImage = reader.result;
+      this.character.thumbnail = {
+        path: this.selectedImage, 
+        extension: '' 
+      };
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  }
+
+  onSubmit(): void {
     this.save.emit(this.character);
   }
 
-  // Método para cancelar la edición
-  onCancel() {
+  onCancel(): void {
     this.cancel.emit();
   }
 }

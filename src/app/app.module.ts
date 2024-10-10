@@ -14,6 +14,7 @@ import { CharacterCardComponent } from './components/character-card/character-ca
 import { CharacterFormComponent } from './components/character-form/character-form.component';
 import { CardDetailComponent } from './components/card-detail/card-detail.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CharacterCardComponent,
     CharacterFormComponent,
     CardDetailComponent,
-    FooterComponent
+    FooterComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
