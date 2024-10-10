@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { EditCharacterComponent } from './components/edit-character/edit-character.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
+import { CharacterCardComponent } from './components/character-card/character-card.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HomeComponent } from './components/home/home.component';
     ListComponent,
     BannerComponent,
     EditCharacterComponent,
-    HomeComponent
+    HomeComponent,
+    CharacterCardComponent
   ],
   imports: [
     BrowserModule,

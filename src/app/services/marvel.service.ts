@@ -44,7 +44,7 @@ export class MarvelService {
     return characters ? JSON.parse(characters) : [];
   }
 
-  
+  //Método para actualizar un personaje en el localStorage  
   updateLocalCharacter(updatedCharacter: any) {
     let characters = this.getLocalCharacters();
     const index = characters.findIndex(c => c.id === updatedCharacter.id);
@@ -54,6 +54,7 @@ export class MarvelService {
     }
   }
 
+  //Método para eliminar un personaje del localStorage
   deleteLocalCharacter(id: number) {
     let characters = this.getLocalCharacters();
     characters = characters.filter(c => c.id !== id);
