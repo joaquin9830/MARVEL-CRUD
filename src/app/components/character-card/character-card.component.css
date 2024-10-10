@@ -4,20 +4,20 @@
     margin-bottom: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    min-height: 300px; /* Altura mínima */
+    min-height: 300px; 
     display: flex;
-    flex-direction: column; /* Alinear contenido en columna */
-    justify-content: space-between; /* Distribuir contenido */
+    flex-direction: column; 
+    justify-content: space-between; 
 }
 
 .character-card img {
     width: 100%;
-    height: 200px; /* Altura fija de la imagen para que todas sean iguales */
-    object-fit: cover; /* Ajustar la imagen sin distorsión */
+    height: 200px; 
+    object-fit: cover; 
 }
 
 .card-body {
-    flex-grow: 1; /* Ocupa el espacio disponible */
+    flex-grow: 1; 
     padding: 15px;
 }
 

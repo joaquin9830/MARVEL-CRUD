@@ -1,28 +1,48 @@
+/* Fondo oscuro detrás de la tarjeta emergente */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 900; 
+}
+
+/* Tarjeta emergente con detalles del personaje */
 .detail-card {
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 400px;
-    background-color: var(--color-primary);
-    color: var(--color-secondary);
+    background-color: #000; 
+    color: white;
     border: 2px solid var(--color-accent);
-    z-index: 1000;
-  }
-  
-  .detail-card img {
-    width: 100%;
-  }
-  
-  .detail-card .card-body {
+    z-index: 1000; 
     padding: 20px;
-  }
-  
-  .detail-card button {
+    border-radius: 10px;
+}
+
+.detail-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.detail-card .card-body {
+    padding: 20px;
+}
+
+.detail-card button {
     background-color: var(--color-button);
     border: none;
     padding: 10px;
     color: white;
     cursor: pointer;
-  }
-  
+    width: 100%;
+}
+
+.detail-card button:hover {
+    background-color: var(--color-accent);
+}
