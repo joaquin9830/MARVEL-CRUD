@@ -1,1 +1,9 @@
-<p>card-detail works!</p>
+<div class="card detail-card">
+    <img [src]="character.thumbnail?.path + '.' + character.thumbnail?.extension" class="card-img-top" alt="{{character.name}}">
+    <div class="card-body">
+      <h5 class="card-title">{{ character.name }}</h5>
+      <p class="card-text">{{ character.description || 'Descripción no disponible' }}</p>
+      <button class="btn btn-secondary" (click)="closeDetail()">Cerrar</button> <!-- Botón para cerrar -->
+    </div>
+  </div>
+  
