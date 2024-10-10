@@ -3,6 +3,7 @@
     color: #fff;
     padding: 20px 0;
     text-align: center;
+    margin-top: 20px;
   }
   
   .footer-section .container {
@@ -22,11 +23,11 @@
   }
   
   .social-links a {
-    color: #fff;
+    color: var(--color-accent);
     font-size: 24px;
     transition: color 0.3s;
   }
   
   .social-links a:hover {
-    color: #007bff;
+    color: var(--color-secondary);
   }
