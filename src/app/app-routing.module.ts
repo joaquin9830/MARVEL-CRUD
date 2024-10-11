@@ -5,7 +5,7 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {path:'', component: HomeComponent},
-  { path: 'edit-character/:id', component: EditCharacterComponent }
+  
 ];
 
 @NgModule({
